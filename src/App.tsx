@@ -2,6 +2,8 @@ import MenuItem from './components/MenuItem';
 import { OrderContents } from './components/OrderContents';
 import { menuItems } from './data/db';
 import useOrder from './hooks/useOrder';
+import { OrderTotals } from './components/OrderTotals';
+import { TipPercentageForm } from './components/TipPercentageForm';
 
 function App() {
 
@@ -28,10 +30,17 @@ function App() {
             </div>
 
         </div>
-        <div className='border border-dashed border-slate-300 p-5 rounded-lg space-y-10'>
+        <div className='border border-dashed border-slate-300 p-5 rounded-lg space-y-10 flex flex-col justify-between'>
           <OrderContents
             order={order}
             removeItem={removeItem}
+          />
+
+          <TipPercentageForm 
+          />
+          
+          <OrderTotals
+            order={order}
           />
         </div>
       </main>
